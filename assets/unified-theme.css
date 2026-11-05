@@ -1,0 +1,316 @@
+/* The Nabi Global unified visual system — shared across the School and Research House. */
+:root {
+  --nabi-night: #11100e;
+  --nabi-night-2: #191713;
+  --nabi-stone: #242019;
+  --nabi-paper: #eee5d3;
+  --nabi-paper-2: #dfd1b6;
+  --nabi-ink: #2a251d;
+  --nabi-gold: #c5a24c;
+  --nabi-gold-hi: #ead28c;
+  --nabi-red: #7a2421;
+  --nabi-bronze: #a8733e;
+  --nabi-muted: #a89d89;
+  --nabi-line: rgba(197, 162, 76, .34);
+}
+
+body {
+  background-color: var(--nabi-night) !important;
+}
+
+::selection {
+  background: var(--nabi-gold);
+  color: var(--nabi-night);
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline-color: var(--nabi-gold-hi) !important;
+}
+
+/* Reading Map */
+body:has(.gate-scene) {
+  --bg: var(--nabi-night);
+  --bg2: var(--nabi-night-2);
+  --stone: var(--nabi-stone);
+  --panel: var(--nabi-paper);
+  --panel2: var(--nabi-paper-2);
+  --ink: var(--nabi-ink);
+  --muted: #6f6049;
+  --line: #bda66f;
+  --gold: var(--nabi-gold);
+  --gold-hi: var(--nabi-gold-hi);
+  --dawn: #93662e;
+  --dawn-soft: #ead7aa;
+  --throne: var(--nabi-red);
+  --on-dark: var(--nabi-paper);
+  --on-dark-muted: var(--nabi-muted);
+  background: radial-gradient(1100px 560px at 50% 0, #211a12, var(--nabi-night) 72%) !important;
+}
+
+body:has(.gate-scene) .hero-box img {
+  opacity: 0;
+}
+
+body:has(.gate-scene) .hero-box {
+  background:
+    linear-gradient(180deg, rgba(17,16,14,.04), rgba(17,16,14,.24)),
+    url("realistic-gateway-v2.png") center / cover no-repeat;
+  box-shadow: inset 0 0 80px rgba(0,0,0,.48);
+}
+
+body:has(.gate-scene) .hot:not(.gatehot) {
+  border: 1px solid rgba(234,210,140,.25);
+  background: rgba(197,162,76,.035);
+  box-shadow: inset 0 0 20px rgba(0,0,0,.16);
+}
+
+body:has(.gate-scene) .hot:hover,
+body:has(.gate-scene) .hot:focus-visible,
+body:has(.gate-scene) .hot[aria-pressed="true"] {
+  background: rgba(197,162,76,.2) !important;
+  box-shadow: 0 0 0 2px var(--nabi-gold-hi), 0 0 26px rgba(197,162,76,.45) !important;
+}
+
+body:has(.gate-scene) .gh::before {
+  background:
+    linear-gradient(180deg, rgba(17,16,14,.2), rgba(17,16,14,.68)),
+    url("realistic-gateway-v2.png") center / cover no-repeat !important;
+  filter: sepia(.08) saturate(.82) brightness(.62) !important;
+}
+
+body:has(.gate-scene) .gh::after {
+  background: radial-gradient(circle at 50% 28%, rgba(197,162,76,.09), rgba(17,16,14,.9) 76%) !important;
+}
+
+body:has(.gate-scene) .gh-pillar,
+body:has(.gate-scene) .guide,
+body:has(.gate-scene) .door {
+  background: linear-gradient(180deg, rgba(43,37,28,.96), rgba(17,16,14,.98)) !important;
+  border-color: rgba(197,162,76,.42) !important;
+  box-shadow: inset 0 1px rgba(234,210,140,.08), 0 16px 34px rgba(0,0,0,.28) !important;
+}
+
+body:has(.gate-scene) .gh-door,
+body:has(.gate-scene) .guide-step,
+body:has(.gate-scene) .threads button,
+body:has(.gate-scene) .phase {
+  background: rgba(27,24,19,.88) !important;
+  border-color: rgba(197,162,76,.34) !important;
+}
+
+body:has(.gate-scene) .gh-pillar.left .gh-door {
+  position: relative;
+  min-height: 82px;
+  overflow: hidden;
+  isolation: isolate;
+  justify-content: flex-end;
+  padding: 12px 14px !important;
+  background-image:
+    linear-gradient(180deg, rgba(17,16,14,.08), rgba(17,16,14,.88)),
+    url("elements-panorama-v2.png") !important;
+  background-size: 100% 100%, 500% 100% !important;
+  background-repeat: no-repeat !important;
+  border-color: rgba(234,210,140,.5) !important;
+}
+
+body:has(.gate-scene) .gh-pillar.left .gh-door:nth-of-type(1) { background-position: center, 0% center !important; }
+body:has(.gate-scene) .gh-pillar.left .gh-door:nth-of-type(2) { background-position: center, 25% center !important; }
+body:has(.gate-scene) .gh-pillar.left .gh-door:nth-of-type(3) { background-position: center, 50% center !important; }
+body:has(.gate-scene) .gh-pillar.left .gh-door:nth-of-type(4) { background-position: center, 75% center !important; }
+body:has(.gate-scene) .gh-pillar.left .gh-door:nth-of-type(5) { background-position: center, 100% center !important; }
+
+body:has(.gate-scene) .gh-pillar.left .gh-door b,
+body:has(.gate-scene) .gh-pillar.left .gh-door span {
+  position: relative;
+  z-index: 1;
+  color: #fff4d7 !important;
+  text-shadow: 0 2px 8px #000, 0 1px 2px #000;
+}
+
+body:has(.gate-scene) .gh-pillar.left .gh-door:hover,
+body:has(.gate-scene) .gh-pillar.left .gh-door:focus-visible {
+  border-color: var(--nabi-gold-hi) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px var(--nabi-gold-hi), 0 12px 24px rgba(0,0,0,.35) !important;
+}
+
+body:has(.gate-scene) .gh-pillar.right .gh-door {
+  position: relative;
+  min-height: 66px;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 10px 12px !important;
+  background-image:
+    linear-gradient(180deg, rgba(17,16,14,.28), rgba(17,16,14,.9)),
+    url("questions-atlas-v2.png") !important;
+  background-size: 100% 100%, 300% auto !important;
+  background-repeat: no-repeat !important;
+  border-color: rgba(234,210,140,.42) !important;
+}
+
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(1) { background-position: center, 0% 16% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(2) { background-position: center, 50% 16% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(3) { background-position: center, 100% 16% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(4) { background-position: center, 0% 50% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(5) { background-position: center, 50% 50% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(6) { background-position: center, 100% 50% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(7) { background-position: center, 0% 84% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(8) { background-position: center, 50% 84% !important; }
+body:has(.gate-scene) .gh-pillar.right .gh-door:nth-of-type(9) { background-position: center, 100% 84% !important; }
+
+body:has(.gate-scene) .gh-pillar.right .gh-door b,
+body:has(.gate-scene) .gh-pillar.right .gh-door span {
+  position: relative;
+  z-index: 1;
+  color: #fff4d7 !important;
+  text-shadow: 0 2px 8px #000, 0 1px 2px #000;
+}
+
+body:has(.gate-scene) .gh-pillar.right .gh-door:hover,
+body:has(.gate-scene) .gh-pillar.right .gh-door:focus-visible {
+  border-color: var(--nabi-gold-hi) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px var(--nabi-gold-hi), 0 12px 24px rgba(0,0,0,.35) !important;
+}
+
+body:has(.gate-scene) .gh-gate {
+  background:
+    linear-gradient(180deg, transparent 50%, rgba(17,16,14,.42)),
+    url("realistic-gateway-v2.png") center / cover no-repeat !important;
+  border: 1px solid rgba(197,162,76,.55) !important;
+  box-shadow: 0 18px 46px rgba(0,0,0,.42) !important;
+}
+
+body:has(.gate-scene) .scroll-unity {
+  max-width: 760px;
+  margin: 12px 0 24px;
+  color: var(--nabi-paper);
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.55;
+}
+
+body:has(.gate-scene) .scroll-inquiry {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+  padding: clamp(20px, 3vw, 34px);
+  background: linear-gradient(145deg, rgba(43,37,28,.96), rgba(17,16,14,.98));
+  border: 1px solid rgba(197,162,76,.45);
+  box-shadow: 0 18px 40px rgba(0,0,0,.28);
+}
+
+body:has(.gate-scene) .inquiry-heading,
+body:has(.gate-scene) .inquiry-question,
+body:has(.gate-scene) .inquiry-note { grid-column: 1 / -1; }
+body:has(.gate-scene) .inquiry-heading h3 { margin: 4px 0 0; color: var(--nabi-gold-hi); font-size: clamp(24px, 3vw, 38px); }
+body:has(.gate-scene) .scroll-inquiry label { display: grid; gap: 7px; color: var(--nabi-paper); }
+body:has(.gate-scene) .scroll-inquiry label > span { color: var(--nabi-gold-hi); font: 600 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+body:has(.gate-scene) .scroll-inquiry input,
+body:has(.gate-scene) .scroll-inquiry select,
+body:has(.gate-scene) .scroll-inquiry textarea {
+  width: 100%;
+  padding: 12px 14px;
+  color: var(--nabi-paper);
+  background: rgba(10,9,8,.72);
+  border: 1px solid rgba(197,162,76,.38);
+  font: inherit;
+}
+body:has(.gate-scene) .scroll-inquiry textarea { resize: vertical; }
+body:has(.gate-scene) .scroll-inquiry button {
+  justify-self: start;
+  padding: 12px 18px;
+  color: var(--nabi-night);
+  background: var(--nabi-gold-hi);
+  border: 1px solid var(--nabi-gold-hi);
+  font: 700 12px var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+body:has(.gate-scene) .inquiry-note { margin: 0; color: var(--nabi-muted); font-size: 13px; }
+@media (max-width: 680px) {
+  body:has(.gate-scene) .scroll-inquiry { grid-template-columns: 1fr; }
+  body:has(.gate-scene) .scroll-inquiry > * { grid-column: 1; }
+}
+
+body:has(.gate-scene) .gateway-nav {
+  background: rgba(17,16,14,.96) !important;
+  border-color: rgba(197,162,76,.42) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.32) !important;
+}
+
+body:has(.gate-scene) .gateway-nav a {
+  color: var(--nabi-paper) !important;
+  border-color: rgba(197,162,76,.3) !important;
+  background: rgba(197,162,76,.06) !important;
+}
+
+body:has(.gate-scene) .gateway-nav a:hover,
+body:has(.gate-scene) .gateway-nav a:focus-visible,
+body:has(.gate-scene) .threads button:hover,
+body:has(.gate-scene) .threads button[aria-pressed="true"] {
+  color: var(--nabi-night) !important;
+  background: var(--nabi-gold-hi) !important;
+  border-color: var(--nabi-gold-hi) !important;
+}
+
+body:has(.gate-scene) .door[aria-pressed="true"] {
+  background: linear-gradient(180deg, #3b2d19, #1a1711) !important;
+  border-color: var(--nabi-gold) !important;
+}
+
+/* Host of Heaven registry — lock it to the same dark museum palette. */
+:root:has(body .layout),
+:root[data-theme="dark"]:has(body .layout),
+:root[data-theme="light"]:has(body .layout) {
+  --bg: var(--nabi-night);
+  --panel: var(--nabi-night-2);
+  --ink: var(--nabi-paper);
+  --muted: var(--nabi-muted);
+  --line: var(--nabi-line);
+  --lapis: var(--nabi-gold-hi);
+  --lapis-soft: #2a2115;
+  --gold: var(--nabi-gold);
+  --ok: #8fc29a;
+  --ok-bg: #17271b;
+  --sup: #cfb66f;
+  --sup-bg: #2a2417;
+  --warn: #e0aa65;
+  --warn-bg: #332315;
+  --pend: #aaa092;
+  --pend-bg: #292521;
+  color-scheme: dark;
+}
+
+/* ChronoAtlas — retain analytical distinctions using colors from one restrained family. */
+body:has(#svg-map) {
+  --night: var(--nabi-night);
+  --night2: var(--nabi-night-2);
+  --night3: #2a2219;
+  --veil: rgba(25, 23, 19, .88);
+  --ivory: var(--nabi-paper);
+  --ivory-dim: #c1b59f;
+  --faint: #958b7c;
+  --rule: var(--nabi-line);
+  --gold: var(--nabi-gold-hi);
+  --amethyst: #b49572;
+  --bronze: var(--nabi-bronze);
+  --teal: #819c91;
+  --magenta: #a25c58;
+  --rose: #b66f62;
+  --ember: #c36f43;
+  --sapphire: #8f9cad;
+  background: radial-gradient(1000px 620px at 50% 0, #241c13, var(--nabi-night) 75%) !important;
+}
+
+body:has(#svg-map) .mapframe {
+  background: radial-gradient(900px 400px at 40% 60%, rgba(197,162,76,.13), transparent 70%), linear-gradient(180deg,#191713,#11100e) !important;
+}
+
+body:has(#svg-map) .spread {
+  background: var(--nabi-paper) !important;
+  border-color: #bfae8d !important;
+}
